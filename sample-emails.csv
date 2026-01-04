@@ -1,0 +1,16 @@
+email,name,company
+test@gmail.com,Test User,Test Company
+john.doe@outlook.com,John Doe,Microsoft
+jane.smith@yahoo.com,Jane Smith,Yahoo Inc
+info@example.com,Info Desk,Example Corp
+admin@tempmail.com,Admin User,Temp Mail
+support@mailinator.com,Support Team,Mailinator
+hello@custom-domain.com,Hello Team,Custom Domain Inc
+sales@nonexistent-domain-12345.com,Sales Team,Fake Company
+invalid-email-format,Bad Format,No Company
+user@protonmail.com,Proton User,ProtonMail
+contact@zoho.com,Contact Team,Zoho Corp
+newsletter@guerrillamail.com,Newsletter,Guerrilla
+demo@yopmail.com,Demo User,Yopmail Test
+real.person@company.co.uk,Real Person,UK Company
+test.user+tag@gmail.com,Tagged User,Gmail Tagged

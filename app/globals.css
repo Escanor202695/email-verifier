@@ -1,0 +1,217 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom base styles */
+@layer base {
+  html {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+
+  code, pre {
+    font-family: 'JetBrains Mono', Menlo, Monaco, monospace;
+  }
+}
+
+/* Custom component styles */
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply btn bg-brand-600 text-white hover:bg-brand-700 focus:ring-brand-500 shadow-sm hover:shadow;
+  }
+
+  .btn-secondary {
+    @apply btn bg-white text-gray-700 border border-gray-300 hover:bg-gray-50 focus:ring-brand-500;
+  }
+
+  .btn-danger {
+    @apply btn bg-red-600 text-white hover:bg-red-700 focus:ring-red-500;
+  }
+
+  .input {
+    @apply w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors duration-200;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-200;
+  }
+
+  .card-header {
+    @apply px-6 py-4 border-b border-gray-200;
+  }
+
+  .card-body {
+    @apply px-6 py-4;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-valid {
+    @apply badge bg-green-100 text-green-800;
+  }
+
+  .badge-invalid {
+    @apply badge bg-red-100 text-red-800;
+  }
+
+  .badge-risky {
+    @apply badge bg-yellow-100 text-yellow-800;
+  }
+
+  .badge-unknown {
+    @apply badge bg-gray-100 text-gray-800;
+  }
+}
+
+/* Custom utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-gray-100 rounded-full;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full hover:bg-gray-400;
+  }
+}
+
+/* Progress bar animation */
+@keyframes progress-indeterminate {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(400%);
+  }
+}
+
+.progress-indeterminate {
+  animation: progress-indeterminate 1.5s ease-in-out infinite;
+}
+
+/* File upload drop zone */
+.drop-zone {
+  @apply relative border-2 border-dashed border-gray-300 rounded-xl p-8 text-center transition-all duration-200;
+}
+
+.drop-zone:hover {
+  @apply border-brand-400 bg-brand-50;
+}
+
+.drop-zone.drag-over {
+  @apply border-brand-500 bg-brand-50 scale-[1.01];
+}
+
+/* Table styles */
+.table-container {
+  @apply overflow-x-auto scrollbar-thin;
+}
+
+.data-table {
+  @apply w-full text-sm;
+}
+
+.data-table thead {
+  @apply bg-gray-50 border-b border-gray-200;
+}
+
+.data-table th {
+  @apply px-4 py-3 text-left font-medium text-gray-600 uppercase tracking-wider text-xs;
+}
+
+.data-table td {
+  @apply px-4 py-3 border-b border-gray-100;
+}
+
+.data-table tbody tr:hover {
+  @apply bg-gray-50;
+}
+
+/* Status colors */
+.status-valid {
+  @apply text-green-600;
+}
+
+.status-invalid {
+  @apply text-red-600;
+}
+
+.status-risky {
+  @apply text-yellow-600;
+}
+
+.status-unknown {
+  @apply text-gray-500;
+}
+
+/* Risk score colors */
+.risk-low {
+  @apply text-green-600 bg-green-50;
+}
+
+.risk-medium {
+  @apply text-yellow-600 bg-yellow-50;
+}
+
+.risk-high {
+  @apply text-red-600 bg-red-50;
+}
+
+/* Sidebar styles */
+.sidebar-link {
+  @apply flex items-center gap-3 px-3 py-2.5 text-sm font-medium rounded-lg transition-colors duration-200;
+}
+
+.sidebar-link-inactive {
+  @apply sidebar-link text-gray-600 hover:bg-gray-100 hover:text-gray-900;
+}
+
+.sidebar-link-active {
+  @apply sidebar-link bg-brand-50 text-brand-700;
+}
+
+/* Toast notification */
+.toast {
+  @apply fixed bottom-4 right-4 px-4 py-3 rounded-lg shadow-lg text-sm font-medium z-50 animate-slide-up;
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out;
+}
